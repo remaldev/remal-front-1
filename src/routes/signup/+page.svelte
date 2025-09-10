@@ -5,7 +5,7 @@
     const res = await fetch('http://localhost:3000/auth/signup', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
     if (!res.ok) throw new Error('Signup failed');
     // after successful signup you can send them to login

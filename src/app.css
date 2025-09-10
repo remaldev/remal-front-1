@@ -3,4 +3,6 @@
 @tailwind utilities;
 
 /* tiny theme tweaks */
-:root { color-scheme: light dark; }
+:root {
+  color-scheme: light dark;
+}

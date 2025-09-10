@@ -9,9 +9,13 @@
   async function submit() {
     error = '';
     loading = true;
-    try { await onSubmit(email.trim(), password); }
-    catch (e:any) { error = e?.message ?? 'Failed'; }
-    finally { loading = false; }
+    try {
+      await onSubmit(email.trim(), password);
+    } catch (e: any) {
+      error = e?.message ?? 'Failed';
+    } finally {
+      loading = false;
+    }
   }
 </script>
 
@@ -23,17 +27,16 @@
   {/if}
 
   <div class="space-y-1">
-    <label class="text-sm">Email</label>
-    <input class="w-full rounded-md" type="email" bind:value={email} required />
+    <label for="email" class="text-sm">Email</label>
+    <input id="email" class="w-full rounded-md" type="email" bind:value={email} required />
   </div>
 
   <div class="space-y-1">
-    <label class="text-sm">Password</label>
-    <input class="w-full rounded-md" type="password" bind:value={password} minlength="6" required />
+    <label for="password" class="text-sm">Password</label>
+    <input id="password" class="w-full rounded-md" type="password" bind:value={password} minlength="6" required />
   </div>
 
-  <button class="w-full rounded-lg bg-black px-4 py-2 text-white disabled:opacity-50"
-          disabled={loading}>
-    {loading ? 'Please wait...' : (mode === 'login' ? 'Log in' : 'Create account')}
+  <button class="w-full rounded-lg bg-black px-4 py-2 text-white disabled:opacity-50" disabled={loading}>
+    {loading ? 'Please wait...' : mode === 'login' ? 'Log in' : 'Create account'}
   </button>
 </form>

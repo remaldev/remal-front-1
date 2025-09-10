@@ -1,7 +1,5 @@
 <script lang="ts">
-  import "../app.css"; // <-- import here
-
-  export let data;
+  import '../app.css';
 </script>
 
 <div class="min-h-screen bg-gray-50 text-gray-900">
