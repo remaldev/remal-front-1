@@ -36,5 +36,8 @@
     "*.{js,ts,jsx,tsx,css,md,json,svelte}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "4.1.13"
   }
 }
